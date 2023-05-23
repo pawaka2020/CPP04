@@ -25,7 +25,7 @@ class WrongCat: public WrongAnimal
 		WrongCat(const WrongCat& other);
 		~WrongCat();
 		WrongCat& operator=(const WrongCat& other);
-		void makeSound() const override;
+		void makeSound() const;
 };
 
 #endif

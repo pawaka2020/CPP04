@@ -27,7 +27,7 @@ class Dog: public AAnimal {
 		//getters and setters
 		Brain* getBrain() const;
 		//member functions
-		void makeSound() const override;
+		void makeSound() const;
 	private:
 		//fields
 		//std::string _type;

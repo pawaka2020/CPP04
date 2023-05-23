@@ -27,7 +27,7 @@ class Cat: public AAnimal {
 		//getters and setters
 		Brain* getBrain() const;
 		//member functions
-		void makeSound() const override;
+		void makeSound() const;
 	private:
 		//fields
 		//heap object declared with 'new'
