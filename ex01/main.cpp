@@ -75,21 +75,19 @@ void pdfTest() {
 }
 
 int main() {
-    std::vector<Animal*> animals;
-    const int numAnimals = 10;
+	const size_t size = 5;
+	Animal* animals[size];
     // Create and fill the array of Animal objects
-    for (int i = 0; i < numAnimals; ++i) {
-        if (i < numAnimals / 2) {
-            animals.push_back(new Dog());
-        }
-        else {
-            animals.push_back(new Cat());
+    for (size_t i = 0; i < size; ++i) {
+        if (i < size / 2) {
+            animals[i] = new Dog();
+        } else {
+            animals[i] = new Cat();
         }
     }
     // Delete every Animal in the array
-    for (Animal* animal : animals) {
-        animal->makeSound();
-        delete animal;
+    for (size_t i = 0; i < size; ++i) {
+        delete animals[i];
     }
 
     testDeepCopy();

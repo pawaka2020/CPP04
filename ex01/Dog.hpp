@@ -15,6 +15,8 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
+#include <string>
+#include <iostream>
 
 /*now notice it has a 'Brain' heap allocated object as a field
 also a copy constructor and getter for deep copy test later*/

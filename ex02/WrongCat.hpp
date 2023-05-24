@@ -20,7 +20,7 @@ public:
     WrongCat();
     ~WrongCat();
 
-    void makeSound() const override;
+    void makeSound() const;
 };
 
 #endif

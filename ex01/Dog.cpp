@@ -16,14 +16,17 @@
 Dog::Dog() {
     _brain = new Brain();
     _type = "Dog";
+	std::cout << "Creating a Dog." << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other) {
     _brain = new Brain(*other._brain);
+	std::cout << "Creating a Dog copy." << std::endl;
 }
 
 Dog::~Dog() {
     delete _brain;
+	std::cout << "Destroying a Dog." << std::endl;
 }
 
 void Dog::makeSound() const {
