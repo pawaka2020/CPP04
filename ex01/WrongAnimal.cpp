@@ -11,35 +11,21 @@
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
+#include <iostream>
 
-WrongAnimal::WrongAnimal()
-{
-	std::cout << "'Wrong Animal' constructed\n";
-	this->_type = "animal";
+WrongAnimal::WrongAnimal() {
+    std::cout << "Creating a WrongAnimal." << std::endl;
+    _type = "WrongAnimal";
 }
-WrongAnimal::WrongAnimal(WrongAnimal &other) {
-	std::cout << "'Animal' copy constructed." << std::endl;
-	*this = other;
-}
+
 WrongAnimal::~WrongAnimal() {
-	std::cout << "'WrongAnimal' destroyed." << std::endl;
+    std::cout << "Destroying a WrongAnimal." << std::endl;
 }
 
-//operator overloads
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other) {
-	_type = other._type;
-	return *this;
-}
-
-//getters and setters
-void WrongAnimal::setType(const std::string& type) {
-	_type = type;
-}
 std::string WrongAnimal::getType() const {
-	return _type;
+    return _type;
 }
 
-//member functions
-void WrongAnimal::makeSound() const{
-	std::cout << "WrongAnimal sound." << std::endl;
+void WrongAnimal::makeSound() const {
+    std::cout << "WrongAnimal sound!" << std::endl;
 }

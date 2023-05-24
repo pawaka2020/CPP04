@@ -10,23 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONG_ANIMAL_HPP
-# define WRONG_ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-# include <iostream>
+#include <string>
 
-class WrongAnimal
-{
-	public:
-		WrongAnimal();
-		WrongAnimal(WrongAnimal &other);
-		virtual ~WrongAnimal();
-		WrongAnimal & operator=(const WrongAnimal& other);
-		virtual void makeSound() const;
-		std::string getType(void) const;
-		void setType(const std::string& type);
-	protected:
-		std::string	_type;
+/*same as Animal, notice I virtualized destructor and 'makeSound'*/
+class WrongAnimal {
+protected:
+    std::string _type;
+
+public:
+    WrongAnimal();
+    virtual ~WrongAnimal();
+
+    std::string getType() const;
+    virtual void makeSound() const;
 };
 
 #endif

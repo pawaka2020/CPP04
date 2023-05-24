@@ -11,36 +11,25 @@
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include <iostream>
 
-//constructors and destructor
-Cat::Cat(): AAnimal() {
-	std::cout << "'Cat' constructed." << std::endl;
-	_type = "Cat";
-	_brain = new Brain();
+Cat::Cat() {
+    _brain = new Brain();
+    _type = "Cat";
 }
-Cat::Cat(const Cat& other): AAnimal() {
-std::cout << "'Cat' copy constructed." << std::endl;
-	_type = other._type;
-	_brain = new Brain(*other._brain);
+
+Cat::Cat(const Cat& other) : Animal(other) {
+    _brain = new Brain(*other._brain);
 }
+
 Cat::~Cat() {
-	delete _brain;
-	std::cout <<"'Cat' destroyed." <<std::endl;
+    delete _brain;
 }
 
-//operator overloads
-// Cat& Cat::operator=(const Cat& other) {
-// 	_type = other._type;
-// 	if (_brain) delete _brain;
-// 	_brain = new Brain(*other.getBrain());
-// 	return *this;
-// }
+void Cat::makeSound() const {
+    std::cout << "Meow! I am a cat." << std::endl;
+}
 
 Brain* Cat::getBrain() const {
-	return (_brain);
-}
-
-//member functions
-void Cat::makeSound() const {
-	std::cout << "Meow" << std::endl;
+    return _brain;
 }

@@ -11,21 +11,16 @@
 /* ************************************************************************** */
 
 #ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
 
-class WrongCat: public WrongAnimal
-{
-	protected:
-		std::string	type;
+class WrongCat : public WrongAnimal {
+public:
+    WrongCat();
+    ~WrongCat();
 
-	public:
-		WrongCat();
-		WrongCat(const WrongCat& other);
-		~WrongCat();
-		WrongCat& operator=(const WrongCat& other);
-		void makeSound() const;
+    void makeSound() const override;
 };
 
 #endif

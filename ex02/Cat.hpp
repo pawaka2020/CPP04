@@ -11,27 +11,22 @@
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
-# define CAT_HPP
+#define CAT_HPP
 
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat: public AAnimal {
-	public:
-		//constructors and destructor
-		Cat();
-		Cat(const Cat& other);
-		~Cat();
-		//operator overloads
-		Cat& operator=(const Cat& other);
-		//getters and setters
-		Brain* getBrain() const;
-		//member functions
-		void makeSound() const;
-	private:
-		//fields
-		//heap object declared with 'new'
-		Brain* _brain;
+class Cat : public Animal {
+private:
+    Brain* _brain;
+
+public:
+    Cat();
+    Cat(const Cat& other); // Copy constructor
+    ~Cat();
+
+    void makeSound() const;
+    Brain* getBrain() const;
 };
 
 #endif

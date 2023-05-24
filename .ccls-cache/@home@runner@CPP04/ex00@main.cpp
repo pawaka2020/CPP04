@@ -37,6 +37,7 @@ int main(void) {
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound();
 	j->makeSound();
+	meta->makeSound();
 
 	delete meta;
 	delete i;

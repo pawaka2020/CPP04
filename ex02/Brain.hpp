@@ -11,23 +11,22 @@
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
-# define BRAIN_HPP
+#define BRAIN_HPP
 
-#include <iostream>
+#include <string>
 
-class Brain
-{
-	public:
-		Brain();
-		~Brain();
-		Brain(const Brain& other);
-		Brain & operator=(const Brain& other);
-		// Operator overload for !=
-		bool operator!=(const Brain& other) const;
-		std::string* getIdeas() const;
-		void setIdeas(const std::string& idea);
-	private:
-		std::string* _ideas;
+class Brain {
+private:
+    std::string _ideas[100];
+
+public:
+    Brain();
+	//added to test deep copying later
+    Brain(const Brain& other);
+    ~Brain();
+	//these two will be used for testing deep copying
+    void setIdeas(const std::string& idea);
+    bool operator!=(const Brain& other) const;
 };
 
 #endif

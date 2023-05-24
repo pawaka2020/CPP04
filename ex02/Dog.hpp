@@ -13,25 +13,22 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog: public AAnimal {
-	public:
-		//constructors and destructor
-		Dog();
-		Dog(const Dog& other);
-		~Dog();
-		//operator overloads
-		Dog& operator=(const Dog& other);
-		//getters and setters
-		Brain* getBrain() const;
-		//member functions
-		void makeSound() const;
-	private:
-		//fields
-		//std::string _type;
-		Brain* _brain;
+/*now notice it has a 'Brain' heap allocated object as a field
+also a copy constructor and getter for deep copy test later*/
+class Dog : public Animal {
+private:
+    Brain* _brain;
+
+public:
+    Dog();
+    Dog(const Dog& other); 
+    ~Dog();
+
+    void makeSound() const;
+    Brain* getBrain() const;
 };
 
-#endif	
+#endif

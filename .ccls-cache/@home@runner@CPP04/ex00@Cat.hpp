@@ -25,7 +25,7 @@ class Cat: public Animal {
 		Cat& operator=(const Cat& other);
 		//getters and setters
 		//member functions
-		void makeSound() const override;
+		void makeSound() const;
 	private:
 		//fields
 		//std::string _type;

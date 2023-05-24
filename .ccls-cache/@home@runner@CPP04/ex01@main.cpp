@@ -10,12 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-// #include "WrongAnimal.hpp"
-// #include "WrongCat.hpp"
-
 
 //makes sure a copy is created with separate data rather than just references
 //if the fields inside 'brain' can be made different in dog1 and dog2, then 
@@ -38,7 +34,7 @@ void testDeepCopy() {
 }
 
 void testDeepCopy2() {
-   Cat* cat1 = new Cat();
+   	Cat* cat1 = new Cat();
 	cat1->getBrain()->setIdeas("cat1");
     Cat* cat2 = new Cat(*cat1);
 	cat1->getBrain()->setIdeas("cat2");
@@ -55,13 +51,13 @@ void testDeepCopy2() {
 }
 
 int main(void) {
-	// const Animal *j = new Dog();
-	// const Animal *i = new Cat();
-
-	// delete j;
-	// delete i;
-
-	// return 0;
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+	j->makeSound();
+	i->makeSound();
+	delete j;
+	delete i;
 	testDeepCopy();
 	testDeepCopy2();
+	return 0;
 }

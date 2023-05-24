@@ -11,27 +11,23 @@
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include <iostream>
 #include <string>
 
 class Animal {
-	public:
-		//constructors and destructor
-		Animal();
-		Animal(const Animal& other);
-		virtual ~Animal();
-		//operator overloads
-		Animal& operator=(const Animal& other);
-		//getters and setters
-		void setType(const std::string& type);
-		std::string getType() const;
-		//member functions
-		virtual void makeSound() const;
-	protected:
-		//fields
-		std::string _type;
+protected:
+    std::string _type;
+
+public:
+    Animal();
+	/*virtual because we want this destructor to also be called when 'Dog' or 'Cat''s
+	destructors get called, ensuring clean memory management*/	
+    virtual ~Animal();
+	//not virtual because this will be the same for 'Animal' and 'Dog' and 'Cat'
+    virtual std::string getType() const;
+	//virtual because I expect 'Dog' and 'Cat' to modify this
+    virtual void makeSound() const;
 };
 
 #endif
